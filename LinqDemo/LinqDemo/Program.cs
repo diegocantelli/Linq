@@ -12,6 +12,9 @@ namespace LinqDemo
             //Obtendo o menor valor de um array
             int result = numbers.Min();
 
+            //Obtendo o menor dentro os valores pares
+            result = numbers.Where(x => x % 2 == 0).Min();
+
             Console.WriteLine(result);
             Console.Read();
         }
