@@ -1,0 +1,11 @@
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\bin\Debug\netcoreapp2.2\LinqDemo.deps.json
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\bin\Debug\netcoreapp2.2\LinqDemo.runtimeconfig.json
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\bin\Debug\netcoreapp2.2\LinqDemo.runtimeconfig.dev.json
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\bin\Debug\netcoreapp2.2\LinqDemo.dll
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\bin\Debug\netcoreapp2.2\LinqDemo.pdb
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.csprojAssemblyReference.cache
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.csproj.CoreCompileInputs.cache
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.AssemblyInfoInputs.cache
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.AssemblyInfo.cs
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.dll
+C:\Users\pc-cantelli\Documents\Programação 2018\C#\Linq\KudVenkat\LinqDemo\LinqDemo\obj\Debug\netcoreapp2.2\LinqDemo.pdb
