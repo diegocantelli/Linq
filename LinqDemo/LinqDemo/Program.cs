@@ -28,6 +28,16 @@ namespace LinqDemo
             //Resultado -> "Chile, Brasil, India, EUA, UK" 
             var aggregateSeed = countries.Aggregate("Chile ", (a, b) => a + ", " + b);
 
+            // Utilizando a função de projeção SELECT para retornar apenas uma parte do objeto ou até mesmo um novo objeto  
+            var employeeId = Employee.GetAllEmployees().Select(x => x.EmployeeId);
+
+            // Utilizando a função de projeção SELECT para retornar um objeto anônimo  
+            var employeeData = Employee.GetAllEmployees().Select(x => new { Id = x.EmployeeId, Name = x.FirstName });
+
+            // Utilizando a função de projeção SELECT para retornar um objeto anônimo  e efetuando o cálculo do salário mensal
+            var employeeMonthlySalary = Employee.GetAllEmployees()
+                .Select(x => new { Id = x.EmployeeId, Name = x.FirstName, MonthlySalary = x.AnnualSalary / 12 });
+
             Console.WriteLine(aggregateSeed);
             Console.Read();
         }
