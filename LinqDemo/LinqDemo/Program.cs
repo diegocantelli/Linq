@@ -38,7 +38,27 @@ namespace LinqDemo
             var employeeMonthlySalary = Employee.GetAllEmployees()
                 .Select(x => new { Id = x.EmployeeId, Name = x.FirstName, MonthlySalary = x.AnnualSalary / 12 });
 
-            Console.WriteLine(aggregateSeed);
+            // Utilizando a função de projeção SelectMany para obter um único IEnumerable com todas as opções da lista
+            // habilidades -> Irá retornar um IEnumerable<string> contendo as habilidades de cada empregado numa mesma lista,
+            // que antes estavam agrupadas por empregado
+            var habilidades = Employee.GetAllEmployees().SelectMany(x => x.Habilidades);
+
+            //Caso haja valores duplicados no retorno e seja necessário filtrar os duplicados para retornar apenas uma
+            // ocorrência, pode se usar o operador Distinct
+            var habilidadesDistinct = Employee.GetAllEmployees().SelectMany(x => x.Habilidades).Distinct();
+
+            // Retornando um objeto com base nos dados do objeto original e com base em cada habilidade que foi extraída
+            // no SelectMany
+            // Para cada habilidade que um operário possuir, será criada uma nova instância desse objeto
+            //(empregado, habilidade) -> empregado: objeto original, habilidade: habilidades extraídas via SelectMany
+            var habilidadesDistinct2 = Employee.GetAllEmployees().SelectMany(x => x.Habilidades, (empregado, habilidade) =>
+                new { EmpregadoNome = empregado.FirstName, Competencia = habilidade }
+            ).Distinct();
+
+            foreach (var item in habilidadesDistinct2)
+            {
+                Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
+            }
             Console.Read();
         }
     }
