@@ -55,6 +55,12 @@ namespace LinqDemo
                 new { EmpregadoNome = empregado.FirstName, Competencia = habilidade }
             ).Distinct();
 
+            //Ordenando os empregados pelo nome de forma ascendente 
+            var orderedAscEmployees = Employee.GetAllEmployees().OrderBy(x => x.FirstName);
+
+            //Ordenando os empregados pelo nome de forma descendente 
+            var orderedDescEmployees = Employee.GetAllEmployees().OrderByDescending(x => x.FirstName);
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
