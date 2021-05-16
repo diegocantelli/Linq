@@ -61,6 +61,10 @@ namespace LinqDemo
             //Ordenando os empregados pelo nome de forma descendente 
             var orderedDescEmployees = Employee.GetAllEmployees().OrderByDescending(x => x.FirstName);
 
+            //Ordenando os empregados pelo nome e pelo sobrenome
+            //Quando se deseja ordenar utilizando 2 parâmetros, é necessário utilizar os operadores ThenBy ou ThenByDescending
+            var orderedThenByEmployees = Employee.GetAllEmployees().OrderBy(x => x.FirstName).ThenBy(x => x.LastName);
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
