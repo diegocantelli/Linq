@@ -77,6 +77,20 @@ namespace LinqDemo
             // SkipWhile -> Irá pular todos os itens da lista que satisfaçam a condição passada por parâmetro
             var employeesSkipWhile = Employee.GetAllEmployees().SkipWhile(x => x.AnnualSalary < 10000);
 
+            // Execução tardia -> É referente ao momento em que a instrução é de fato executada.
+            // Neste momento existe n empregados na lista
+            // mesmo se inserirmos outro empregado na lista após a definição da instrução LINQ, este empregado será
+            // retornado na lista
+            // Operadores de execução tardia -> Select, Where, Take, Skip...
+            var execucaoTardia = from emp in Employee.GetAllEmployees()
+                                 select emp;
+
+            // Para forçarmos que a instrução LINQ seja executada na hora, temos que convertê-la para lista(ToList)
+            // Assim não irá incluir no resultado empregados que foram incluídos após a definição da instrução LINQ 
+            // Operadores de execução imediata -> Count, Average, Min, Max, ToList...
+            var execucaoImediata = (from emp in Employee.GetAllEmployees()
+                                    select emp).ToList();
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
