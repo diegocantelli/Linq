@@ -68,6 +68,9 @@ namespace LinqDemo
             // Take -> Irá retornar os n primeiros itens de uma lista
             var employeesTake = Employee.GetAllEmployees().Take(2);
 
+            // Skip -> Irá pular os n primeiros itens de uma lista
+            var employeesSkip = Employee.GetAllEmployees().Skip(1).Take(2);
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
