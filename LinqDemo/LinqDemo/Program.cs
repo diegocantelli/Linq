@@ -71,6 +71,9 @@ namespace LinqDemo
             // Skip -> Irá pular os n primeiros itens de uma lista
             var employeesSkip = Employee.GetAllEmployees().Skip(1).Take(2);
 
+            // TakeWhile -> Irá retornar todos os itens da lista que satisfaçam a condição passada por parâmetro
+            var employeesTakeWhile = Employee.GetAllEmployees().TakeWhile(x => x.AnnualSalary > 10000);
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
