@@ -65,6 +65,9 @@ namespace LinqDemo
             //Quando se deseja ordenar utilizando 2 parâmetros, é necessário utilizar os operadores ThenBy ou ThenByDescending
             var orderedThenByEmployees = Employee.GetAllEmployees().OrderBy(x => x.FirstName).ThenBy(x => x.LastName);
 
+            // Take -> Irá retornar os n primeiros itens de uma lista
+            var employeesTake = Employee.GetAllEmployees().Take(2);
+
             foreach (var item in habilidadesDistinct2)
             {
                 Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
