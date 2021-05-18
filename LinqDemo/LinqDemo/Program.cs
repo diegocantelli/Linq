@@ -118,6 +118,14 @@ namespace LinqDemo
             // Este operador trabalha com execução tardia
             var intlist = list.Cast<int>();
 
+
+            ArrayList list2 = new ArrayList();
+            list2.Add(1); list2.Add(2); list2.Add(3);
+            list2.Add("ABC");
+
+            // OfType<T> -> irá retornar apenas os itens do mesmo tipo especificado no parâmetro genérico
+            var intListOfType = list2.OfType<int>();
+
             foreach (var empLkp in empregadosLookup)
             {
                 // empLkp.Key -> Será a chave que foi usada para realizar o agrupamento, no caso a prop Gender
