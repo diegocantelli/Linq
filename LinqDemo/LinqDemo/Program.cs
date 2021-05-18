@@ -91,9 +91,15 @@ namespace LinqDemo
             var execucaoImediata = (from emp in Employee.GetAllEmployees()
                                     select emp).ToList();
 
-            foreach (var item in habilidadesDistinct2)
+            int[] numeros = { 1, 2, 3 };
+
+            //ToList() -> Converte uma sequeência em uma lista
+            // Este operador não utiliza execução tardia
+            var numerosList = numeros.ToList();
+
+            foreach (var numero in numeros)
             {
-                Console.WriteLine(item.EmpregadoNome + " " + item.Competencia );
+                Console.WriteLine(numero);
             }
             Console.Read();
         }
