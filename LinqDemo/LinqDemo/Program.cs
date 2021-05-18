@@ -105,9 +105,20 @@ namespace LinqDemo
             // Este não é um operador de execução tardia
             var empregadosDict = empregadosList.ToDictionary(x => x.EmployeeId, x => x.FirstName);
 
-            foreach (var empDict in empregadosDict)
+            // ToLookup -> é uma lista de dicionários. Irá agrupar todos os itens com base no parâmetro informado
+            var empregadosLookup = Employee.GetAllEmployees().ToLookup(x => x.Gender);
+
+            foreach (var empLkp in empregadosLookup)
             {
-                Console.WriteLine(empDict.Key + empDict.Value);
+                // empLkp.Key -> Será a chave que foi usada para realizar o agrupamento, no caso a prop Gender
+                Console.WriteLine("Empregados do gênero " + empLkp.Key );
+
+                // empregadosLookup[empLkp.Key] -> irá retornar os empregados que fazem parte da chave atual, que no caso
+                // será o gênero
+                foreach (var emp in empregadosLookup[empLkp.Key])
+                {
+                    Console.WriteLine(emp.FirstName + "" + emp.LastName);
+                }
             }
             Console.Read();
         }
