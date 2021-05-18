@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 
 namespace LinqDemo
@@ -107,6 +108,15 @@ namespace LinqDemo
 
             // ToLookup -> é uma lista de dicionários. Irá agrupar todos os itens com base no parâmetro informado
             var empregadosLookup = Employee.GetAllEmployees().ToLookup(x => x.Gender);
+
+
+            ArrayList list = new ArrayList();
+            list.Add(1); list.Add(2); list.Add(3);
+
+            // Cast<T> -> Para cada item contido na coleção ele tentará fazer a conversão para o tipo genérico especificado
+            // caso alguns dos itens falhe na conversão, será lançada uma exceção.
+            // Este operador trabalha com execução tardia
+            var intlist = list.Cast<int>();
 
             foreach (var empLkp in empregadosLookup)
             {
