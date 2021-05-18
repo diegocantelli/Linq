@@ -97,9 +97,17 @@ namespace LinqDemo
             // Este operador não utiliza execução tardia
             var numerosList = numeros.ToList();
 
-            foreach (var numero in numeros)
+
+            var empregadosList = Employee.GetAllEmployees().ToList();
+
+            // ToDictionary -> Converte os itens de uma sequência em um dicionário
+            // Os valores das chaves(1 parâmetro) devem ser únicas
+            // Este não é um operador de execução tardia
+            var empregadosDict = empregadosList.ToDictionary(x => x.EmployeeId, x => x.FirstName);
+
+            foreach (var empDict in empregadosDict)
             {
-                Console.WriteLine(numero);
+                Console.WriteLine(empDict.Key + empDict.Value);
             }
             Console.Read();
         }
