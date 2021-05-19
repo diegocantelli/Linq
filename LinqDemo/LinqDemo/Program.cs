@@ -126,6 +126,30 @@ namespace LinqDemo
             // OfType<T> -> irá retornar apenas os itens do mesmo tipo especificado no parâmetro genérico
             var intListOfType = list2.OfType<int>();
 
+            // GroupBy(x => x.Gender) -> irá agrupar os empregados por gênero
+            var empGroupByGender = Employee.GetAllEmployees().GroupBy(x => x.Gender);
+
+            // Para cada gênero que foi agrupado
+            foreach (var emp in empGroupByGender)
+            {
+                // irá exibir apenas a qtd dos que possuem pelo menos 1 habilidade
+                // emp.Key -> irá conter a chave que foi usada no agrupamento
+                // emp -> irá conter a lista dos elementos que foram agrupados, neste caso irá conter uma lista de empregados
+                Console.WriteLine(emp.Key + " " + emp.Count(x => x.Habilidades.Count > 0));
+            }
+
+            var empGroupByGenderSqlLike = from employees in Employee.GetAllEmployees()
+                                              // agrupa os empregados por gênero e joga esse resultado na variável empGroupByGenderSlq
+                                          group employees by employees.Gender into empGroupByGenderSlq
+                                          // orderna pela chave, que nesse caso será por gênero
+                                          orderby empGroupByGenderSlq.Key
+                                          select new
+                                          {
+                                              Key = empGroupByGenderSlq.Key,
+                                              Employees = empGroupByGenderSlq.OrderBy(x => x.FirstName)
+                                          };
+
+
             foreach (var empLkp in empregadosLookup)
             {
                 // empLkp.Key -> Será a chave que foi usada para realizar o agrupamento, no caso a prop Gender
