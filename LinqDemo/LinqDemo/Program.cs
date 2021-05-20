@@ -162,6 +162,18 @@ namespace LinqDemo
                     Console.WriteLine(emp.FirstName + "" + emp.LastName);
                 }
             }
+
+
+            var employeeGroupByMultKeys = Employee.GetAllEmployees()
+                .GroupBy(x => new { x.Gender, x.AnnualSalary })
+                //como foram usadas duas chaves na agregação, a propriedade Key irá conter estas duas propriedades: Gender e AnnualSalary
+                .OrderBy(x => x.Key.Gender).ThenBy(x => x.Key.AnnualSalary)
+                .Select(x => new
+                {
+                    Gender = x.Key.Gender,
+                    AnnualSalary = x.Key.AnnualSalary,
+                    Employee = x.OrderBy(emp => emp.FirstName)
+                });
             Console.Read();
         }
     }
