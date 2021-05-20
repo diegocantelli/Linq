@@ -174,6 +174,13 @@ namespace LinqDemo
                     AnnualSalary = x.Key.AnnualSalary,
                     Employee = x.OrderBy(emp => emp.FirstName)
                 });
+
+            int[] numerosOperators = { };
+            // DefaultIfEmpty() -> Irá retornar uma lista com o valor padrão do tipo específico da lista
+            // caso a lista original esteja vazia
+            // Neste exemplo irá retornar zero
+            // DefaultIfEmpty(100) -> é possível especificar o valor padrão que deverá ser retornado
+            var numsDefaultIfEmpty = numerosOperators.DefaultIfEmpty();
             Console.Read();
         }
     }
