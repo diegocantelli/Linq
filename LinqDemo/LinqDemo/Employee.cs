@@ -12,6 +12,7 @@ namespace LinqDemo
         public string Gender { get; set; }
         public int AnnualSalary { get; set; }
         public List<string> Habilidades { get; set; }
+        public int DepartmentId { get; set; }
 
         public static List<Employee> GetAllEmployees()
         {
@@ -23,6 +24,7 @@ namespace LinqDemo
                     LastName ="Daely",
                     Gender = "Male",
                     AnnualSalary = 6000,
+                    DepartmentId = 1,
                     Habilidades = new List<string>
                     {
                         "C#",
@@ -35,6 +37,7 @@ namespace LinqDemo
                     LastName ="Mike",
                     Gender = "Male",
                     AnnualSalary = 8000,
+                    DepartmentId = 2,
                     Habilidades = new List<string>
                     {
                         "Angular",
@@ -47,10 +50,37 @@ namespace LinqDemo
                     LastName ="laura",
                     Gender = "Female",
                     AnnualSalary = 8000,
+                    DepartmentId = 3,
                     Habilidades = new List<string>
                     {
                         "Python",
                         "Data Science"
+                    }
+                },
+                new Employee{
+                    EmployeeId = 104 ,
+                    FirstName = "Julia",
+                    LastName ="julia",
+                    Gender = "Female",
+                    AnnualSalary = 9000,
+                    DepartmentId = 1,
+                    Habilidades = new List<string>
+                    {
+                        "React",
+                        "SCSS"
+                    }
+                },
+                new Employee{
+                    EmployeeId = 105 ,
+                    FirstName = "Joao",
+                    LastName ="joao",
+                    Gender = "Male",
+                    AnnualSalary = 6000,
+                    DepartmentId = 2,
+                    Habilidades = new List<string>
+                    {
+                        "C#",
+                        "RabbitMq"
                     }
                 }
             };

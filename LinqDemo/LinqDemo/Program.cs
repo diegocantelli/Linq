@@ -181,6 +181,29 @@ namespace LinqDemo
             // Neste exemplo irá retornar zero
             // DefaultIfEmpty(100) -> é possível especificar o valor padrão que deverá ser retornado
             var numsDefaultIfEmpty = numerosOperators.DefaultIfEmpty();
+
+            var empDepGroupJoin = Department.GetAllDepartments()
+                // Department.GetAllDepartments() -> especifica qual dataset será usado no join com o dataset de empregados
+                .GroupJoin(Employee.GetAllEmployees(),
+                dep => dep.Id,
+                emp => emp.DepartmentId,
+                // A ordem desses parâmetros obedece a mesma ordem do join GetAllEmployees() -> GetAllDepartments()
+                (departments, employees) => new
+                {
+                    Department = departments,
+                    Employee = employees
+                });
+
+            foreach (var department in empDepGroupJoin)
+            {
+                Console.WriteLine(department.Department.Nome);
+
+                foreach (var emp in department.Employee)
+                {
+                    Console.WriteLine(emp.FirstName);
+                }
+            }
+
             Console.Read();
         }
     }
