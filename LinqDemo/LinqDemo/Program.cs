@@ -204,6 +204,23 @@ namespace LinqDemo
                 }
             }
 
+
+            // inner join
+            var empDepInnerJoin = Employee.GetAllEmployees()
+                .Join(Department.GetAllDepartments(),
+                e => e.DepartmentId,
+                d => d.Id,
+                (employee, department) => new
+                {
+                    EmployeeName = employee.FirstName,
+                    DepartmentName = department.Nome
+                });
+
+            foreach (var item in empDepInnerJoin)
+            {
+                Console.WriteLine(item.EmployeeName + "\t" + item.DepartmentName);
+            }
+
             Console.Read();
         }
     }
