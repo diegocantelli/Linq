@@ -255,6 +255,11 @@ namespace LinqDemo
             var employeeIntersect = Employee.GetAllEmployees().Intersect(Employee.GetAllEmployees(), new EmployeeComparer());
 
 
+            // Operador Except
+            // Retorna os elementos que estão presentes na primeira sequeência mas não na segunda sequência
+            var employeeExcept = Employee.GetAllEmployees().Except(Employee.GetAllEmployees(), new EmployeeComparer());
+
+
             Console.Read();
         }
     }
