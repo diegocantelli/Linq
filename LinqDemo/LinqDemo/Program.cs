@@ -242,6 +242,15 @@ namespace LinqDemo
                 e => true,
                 d => true,
                 (e, d) => new { e, d });
+
+
+            // Operador Union
+            // Combina 2 coleções em uma e remove os elementos duplicados
+            // Para tipos complexos é necessário sobrescrever o método equals da classe
+            // ou projetar um objeto anônimo antes de efetuar o Union
+            var employeeUnion = Employee.GetAllEmployees().Union(Employee.GetAllEmployees(), new EmployeeComparer());
+
+
             Console.Read();
         }
     }
