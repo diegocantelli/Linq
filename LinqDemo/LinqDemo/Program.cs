@@ -250,6 +250,10 @@ namespace LinqDemo
             // ou projetar um objeto anônimo antes de efetuar o Union
             var employeeUnion = Employee.GetAllEmployees().Union(Employee.GetAllEmployees(), new EmployeeComparer());
 
+            // Operador Intersect
+            // Retorna os elementos iguais entre uma sequência e outra
+            var employeeIntersect = Employee.GetAllEmployees().Intersect(Employee.GetAllEmployees(), new EmployeeComparer());
+
 
             Console.Read();
         }
