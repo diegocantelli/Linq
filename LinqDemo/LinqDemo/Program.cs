@@ -226,7 +226,7 @@ namespace LinqDemo
             // as tabelas do join
 
             // cross joint -> cada elemento de uma sequência é combinado com cada elemento da outra sequência
-            // SelectMany
+            // Usando SelectMany
             var crossJoinSelectMany = Employee.GetAllEmployees()
                 .SelectMany(d => Department.GetAllDepartments(),
                 (emp, dep) => new { emp, dep });
@@ -236,6 +236,12 @@ namespace LinqDemo
                 Console.WriteLine(item.emp.FirstName + "\t" + item.dep.Nome);
             }
 
+            // Usando Join
+            var crossJoin = Employee.GetAllEmployees()
+                .Join(Department.GetAllDepartments(),
+                e => true,
+                d => true,
+                (e, d) => new { e, d });
             Console.Read();
         }
     }
