@@ -221,6 +221,21 @@ namespace LinqDemo
                 Console.WriteLine(item.EmployeeName + "\t" + item.DepartmentName);
             }
 
+
+            // left outer join -> retorna todos os itens da tabela à esquerda mais os itens que são comuns entre
+            // as tabelas do join
+
+            // cross joint -> cada elemento de uma sequência é combinado com cada elemento da outra sequência
+            // SelectMany
+            var crossJoinSelectMany = Employee.GetAllEmployees()
+                .SelectMany(d => Department.GetAllDepartments(),
+                (emp, dep) => new { emp, dep });
+
+            foreach (var item in crossJoinSelectMany)
+            {
+                Console.WriteLine(item.emp.FirstName + "\t" + item.dep.Nome);
+            }
+
             Console.Read();
         }
     }
