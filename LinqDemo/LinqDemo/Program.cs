@@ -267,6 +267,10 @@ namespace LinqDemo
             // Repete um números x de vezes um determinado elemento
             var repeatHello = Enumerable.Repeat("Hello", 5);
 
+            // Operador Concat
+            // Concatena duas sequências, mas sem remover os itens duplicados.
+            var concat = Enumerable.Range(3, 5).Concat(Enumerable.Range(1, 2));
+
 
             Console.Read();
         }
