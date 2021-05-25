@@ -259,6 +259,14 @@ namespace LinqDemo
             // Retorna os elementos que estão presentes na primeira sequeência mas não na segunda sequência
             var employeeExcept = Employee.GetAllEmployees().Except(Employee.GetAllEmployees(), new EmployeeComparer());
 
+            // Operador Range
+            // Gera uma sequência de valores com base no intervalo especificado
+            var rangeInt = Enumerable.Range(1, 5);
+
+            // Operador Repeat
+            // Repete um números x de vezes um determinado elemento
+            var repeatHello = Enumerable.Repeat("Hello", 5);
+
 
             Console.Read();
         }
