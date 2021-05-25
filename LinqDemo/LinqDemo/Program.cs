@@ -271,6 +271,14 @@ namespace LinqDemo
             // Concatena duas sequências, mas sem remover os itens duplicados.
             var concat = Enumerable.Range(3, 5).Concat(Enumerable.Range(1, 2));
 
+            // Operador SequenceEqual
+            // Utilizando para determinar quando duas sequências são iguais
+            // Retorna true ou false
+            // Leva em consideração a ordem dos itens na sequência
+            int[] seq1 = { 1, 2, 3 };
+            int[] seq2 = { 1, 2, 3 };
+            var sequence = seq1.SequenceEqual(seq2);
+
 
             Console.Read();
         }
